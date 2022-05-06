@@ -1,0 +1,45 @@
+﻿@model MvcApplication1.Models.Employees
+
+<div class="row  col-12 card">
+    <div class="card-body">
+        <fieldset>
+            <legend>Employees</legend>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Number)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Number)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Name)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Name)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Age)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Age)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Address)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Address)
+            </div>
+        </fieldset>
+
+        <br>
+        <p>
+            @Html.ActionLink("編輯", "Edit", new { id = Model.ID }) |
+            @Html.ActionLink("返回清單", "List")
+        </p>
+
+
+    </div>
+</div>

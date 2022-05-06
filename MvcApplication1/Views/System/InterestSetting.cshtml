@@ -1,0 +1,60 @@
+﻿@{
+    MvcApplication1.Models.DB_Interest InterestItem = new MvcApplication1.Models.DB_Interest();
+}
+@section Styles {
+    @*<link href="~/Content/themes/mian/assets/libs/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />*@
+    <link href="~/Content/themes/mian/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link href="~/Content/themes/mian/assets/extra-libs/datatables.net-bs4/css/responsive.dataTables.min.css" rel="stylesheet" />
+}
+@section Scripts{
+    @*<script src="~/Content/themes/mian/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>*@
+    <script src="~/Content/themes/mian/assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/themes/mian/assets/extra-libs/datatables.net-bs4/js/dataTables.responsive.min.js"></script>
+    <script src="~/Content/themes/mian/dist/js/pages/datatable/datatable-basic.init.js"></script>
+
+    <script src="@Url.Content("~/Scripts/UserDefine/System_InterestSetting.js")"></script>
+}
+<div class="row ">
+
+    @Html.AntiForgeryToken()
+    @*放搜尋及Button的元件*@
+    <div class="form-inline col-sm-12">
+        <button type="button" class="btn waves-effect waves-light ml-1 btn-danger" name="btnAdd" id="btnAdd" data-toggle="modal" data-target="#mdEdit" onclick="EditClick('-1')">新增</button>
+    </div>
+    @*放table*@
+    <div class="col-12">
+        <label id="Msg" style="color:red"></label>
+        <table id="MainTable" class="table table-hover table-bordered table-striped responsive" style="width: 100%; background: #e0e0e0;">
+            <thead class="bg-secondary text-white"></thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+@*新增修改頁*@
+<div class="col-12">
+    <div id="mdEdit" class="modal" tabindex="-1" role="dialog" aria-labelledby="tooltipmodel" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered" style="width:600px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="ModifyTitle"></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <div id="model_state" style="display: none;">add</div>
+                </div>
+                <div id="EditContent" class="modal-body cm_content">
+                    @Html.Partial((string)("~/Views/Modal/#InterestSetting.cshtml"), InterestItem)
+                </div>
+                <div class="modal-footer  align-items-center">
+                    <button id="btnSave" name="btnSave" onclick="btnAddSaveClick();" type="button" class="btn btn-sm btn-danger waves-effect">儲存</button>
+                    <button id="btnDelete" name="btnDelete" onclick="btnDeleteClick();" type="button" class="btn btn-sm btn-warning waves-effect">刪除 </button>
+                    <button id="btnClose" name="btnClose" data-dismiss="modal" type="button" class="btn btn-sm btn-secondary waves-effect">取消</button>
+                </div>
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</div>
+

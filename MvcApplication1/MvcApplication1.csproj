@@ -1,0 +1,1254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FC9AE582-5412-419A-A8D6-5DF4483E6905}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvcApplication1</RootNamespace>
+    <AssemblyName>MvcApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AttributeRouting">
+      <HintPath>..\packages\AttributeRouting.Core.3.5.6\lib\net40\AttributeRouting.dll</HintPath>
+    </Reference>
+    <Reference Include="AttributeRouting.Web">
+      <HintPath>..\packages\AttributeRouting.Core.Web.3.5.6\lib\net40\AttributeRouting.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="AttributeRouting.Web.Mvc">
+      <HintPath>..\packages\AttributeRouting.3.5.6\lib\net40\AttributeRouting.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.0.0.0\lib\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AttributeRoutingConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\SystemController.cs" />
+    <Compile Include="Data\Encryptor.cs" />
+    <Compile Include="Data\StatusCodeEnum.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\APIResultObject.cs" />
+    <Compile Include="Models\DB_Interest.cs" />
+    <Compile Include="Models\DB_Member.cs" />
+    <Compile Include="Models\DB_MemberLevel.cs" />
+    <Compile Include="Models\Employees.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\mian\assets\extra-libs\block-ui\block-ui.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\c3\c3.min.css" />
+    <Content Include="Content\themes\mian\assets\extra-libs\c3\c3.min.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\c3\d3.min.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\calendar\calendar.css" />
+    <Content Include="Content\themes\mian\assets\extra-libs\css-chart\css-chart.css" />
+    <Content Include="Content\themes\mian\assets\extra-libs\datatables.net-bs4\package.json" />
+    <Content Include="Content\themes\mian\assets\extra-libs\datatables.net-bs4\Readme.md" />
+    <Content Include="Content\themes\mian\assets\extra-libs\datatables.net\License.txt" />
+    <Content Include="Content\themes\mian\assets\extra-libs\datatables.net\package.json" />
+    <Content Include="Content\themes\mian\assets\extra-libs\datatables.net\Readme.md" />
+    <Content Include="Content\themes\mian\assets\extra-libs\date-paginator\bootstrap-datepaginator.min.css" />
+    <Content Include="Content\themes\mian\assets\extra-libs\date-paginator\bootstrap-datepaginator.min.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\date-paginator\date-paginator-custom.css" />
+    <Content Include="Content\themes\mian\assets\extra-libs\horizontal-timeline\horizontal-timeline.css" />
+    <Content Include="Content\themes\mian\assets\extra-libs\horizontal-timeline\horizontal-timeline.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jqbootstrapvalidation\validation.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jquery-datatables-editable\dataTables.bootstrap.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jquery-datatables-editable\datatables.css" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jquery-datatables-editable\jquery.dataTables.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jquery-sessiontimeout\jquery.sessionTimeout.min.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jquery-sessiontimeout\jquery.sessionTimeout.min.simple.modal.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jquery-sessiontimeout\session-timeout-init.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jquery.repeater\dff.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jquery.repeater\repeater-init.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jvector\gdp-data.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jvector\jquery-jvectormap-2.0.2.css" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jvector\jquery-jvectormap-2.0.2.min.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jvector\jquery-jvectormap-asia-mill.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jvector\jquery-jvectormap-au-mill.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jvector\jquery-jvectormap-ca-lcc.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jvector\jquery-jvectormap-de-mill.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jvector\jquery-jvectormap-europe-mill-en.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jvector\jquery-jvectormap-in-mill.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jvector\jquery-jvectormap-uk-mill-en.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jvector\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jvector\jquery-jvectormap-us-il-chicago-mill-en.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jvector\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\jvector\jvectormap.custom.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\knob\jquery.knob.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\knob\jquery.knob.min.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\nouislider\noui-slider.min.css" />
+    <Content Include="Content\themes\mian\assets\extra-libs\nouislider\nouislider-init.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\nouislider\palette-noui.css" />
+    <Content Include="Content\themes\mian\assets\extra-libs\prism\prism-old.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\prism\prism.css" />
+    <Content Include="Content\themes\mian\assets\extra-libs\prism\prism.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\raty\rating-init.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\sparkline\sparkline.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\tiny-editable\mindmup-editabletable.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\tiny-editable\numeric-input-example.js" />
+    <Content Include="Content\themes\mian\assets\extra-libs\toastr\toastr-init.js" />
+    <Content Include="Content\themes\mian\assets\images\alert\alert.png" />
+    <Content Include="Content\themes\mian\assets\images\alert\alert2.png" />
+    <Content Include="Content\themes\mian\assets\images\alert\alert3.png" />
+    <Content Include="Content\themes\mian\assets\images\alert\alert4.png" />
+    <Content Include="Content\themes\mian\assets\images\alert\alert5.png" />
+    <Content Include="Content\themes\mian\assets\images\alert\alert6.png" />
+    <Content Include="Content\themes\mian\assets\images\alert\alert7.png" />
+    <Content Include="Content\themes\mian\assets\images\alert\model.png" />
+    <Content Include="Content\themes\mian\assets\images\alert\model2.png" />
+    <Content Include="Content\themes\mian\assets\images\alert\model3.png" />
+    <Content Include="Content\themes\mian\assets\images\background\active-bg.jpg" />
+    <Content Include="Content\themes\mian\assets\images\background\active-bg.png" />
+    <Content Include="Content\themes\mian\assets\images\background\error-bg.jpg" />
+    <Content Include="Content\themes\mian\assets\images\background\img5.jpg" />
+    <Content Include="Content\themes\mian\assets\images\background\img5.png" />
+    <Content Include="Content\themes\mian\assets\images\background\login-register.jpg" />
+    <Content Include="Content\themes\mian\assets\images\background\megamenubg.jpg" />
+    <Content Include="Content\themes\mian\assets\images\background\nyan-cat.gif" />
+    <Content Include="Content\themes\mian\assets\images\background\profile-bg.jpg" />
+    <Content Include="Content\themes\mian\assets\images\background\sidebarbg.png" />
+    <Content Include="Content\themes\mian\assets\images\background\socialbg.jpg" />
+    <Content Include="Content\themes\mian\assets\images\background\Thumbs.db" />
+    <Content Include="Content\themes\mian\assets\images\background\user-bg.jpg" />
+    <Content Include="Content\themes\mian\assets\images\background\user-info.jpg" />
+    <Content Include="Content\themes\mian\assets\images\background\weatherbg.jpg" />
+    <Content Include="Content\themes\mian\assets\images\big\auth-bg.jpg" />
+    <Content Include="Content\themes\mian\assets\images\big\auth-bg2.jpg" />
+    <Content Include="Content\themes\mian\assets\images\big\d2.jpg" />
+    <Content Include="Content\themes\mian\assets\images\big\img1.jpg" />
+    <Content Include="Content\themes\mian\assets\images\big\img2.jpg" />
+    <Content Include="Content\themes\mian\assets\images\big\img3.jpg" />
+    <Content Include="Content\themes\mian\assets\images\big\img4.jpg" />
+    <Content Include="Content\themes\mian\assets\images\big\img5.jpg" />
+    <Content Include="Content\themes\mian\assets\images\big\img6.jpg" />
+    <Content Include="Content\themes\mian\assets\images\big\Thumbs.db" />
+    <Content Include="Content\themes\mian\assets\images\browser\chrome-logo.png" />
+    <Content Include="Content\themes\mian\assets\images\browser\edge-logo.png" />
+    <Content Include="Content\themes\mian\assets\images\browser\firefox-logo.png" />
+    <Content Include="Content\themes\mian\assets\images\browser\internet-logo.png" />
+    <Content Include="Content\themes\mian\assets\images\browser\netscape-logo.png" />
+    <Content Include="Content\themes\mian\assets\images\browser\opera-logo.png" />
+    <Content Include="Content\themes\mian\assets\images\browser\photoshop.jpg" />
+    <Content Include="Content\themes\mian\assets\images\browser\safari-logo.png" />
+    <Content Include="Content\themes\mian\assets\images\browser\sketch.jpg" />
+    <Content Include="Content\themes\mian\assets\images\custom-select.png" />
+    <Content Include="Content\themes\mian\assets\images\favicon.png" />
+    <Content Include="Content\themes\mian\assets\images\gallery\chair.jpg" />
+    <Content Include="Content\themes\mian\assets\images\gallery\chair2.jpg" />
+    <Content Include="Content\themes\mian\assets\images\gallery\chair3.jpg" />
+    <Content Include="Content\themes\mian\assets\images\gallery\chair4.jpg" />
+    <Content Include="Content\themes\mian\assets\images\img1.jpg" />
+    <Content Include="Content\themes\mian\assets\images\img2.jpg" />
+    <Content Include="Content\themes\mian\assets\images\img3.jpg" />
+    <Content Include="Content\themes\mian\assets\images\logo-icon.png" />
+    <Content Include="Content\themes\mian\assets\images\logo-light-icon.png" />
+    <Content Include="Content\themes\mian\assets\images\logo-light-text.png" />
+    <Content Include="Content\themes\mian\assets\images\logo-text.png" />
+    <Content Include="Content\themes\mian\assets\images\product\chair.png" />
+    <Content Include="Content\themes\mian\assets\images\product\chair2.png" />
+    <Content Include="Content\themes\mian\assets\images\product\chair3.png" />
+    <Content Include="Content\themes\mian\assets\images\product\chair4.png" />
+    <Content Include="Content\themes\mian\assets\images\product\ipad.png" />
+    <Content Include="Content\themes\mian\assets\images\product\iphone.png" />
+    <Content Include="Content\themes\mian\assets\images\product\iwatch.png" />
+    <Content Include="Content\themes\mian\assets\images\rating\cancel-off.png" />
+    <Content Include="Content\themes\mian\assets\images\rating\cancel-on.png" />
+    <Content Include="Content\themes\mian\assets\images\rating\heart.png" />
+    <Content Include="Content\themes\mian\assets\images\rating\like.png" />
+    <Content Include="Content\themes\mian\assets\images\rating\star-half-mono.png" />
+    <Content Include="Content\themes\mian\assets\images\rating\star-half.png" />
+    <Content Include="Content\themes\mian\assets\images\rating\star-off.png" />
+    <Content Include="Content\themes\mian\assets\images\rating\star-on.png" />
+    <Content Include="Content\themes\mian\assets\images\tooltip\Euclid.png" />
+    <Content Include="Content\themes\mian\assets\images\tooltip\shape1.svg" />
+    <Content Include="Content\themes\mian\assets\images\tooltip\shape2.svg" />
+    <Content Include="Content\themes\mian\assets\images\tooltip\shape3.svg" />
+    <Content Include="Content\themes\mian\assets\images\tooltip\tooltip1.svg" />
+    <Content Include="Content\themes\mian\assets\images\tooltip\tooltip2.svg" />
+    <Content Include="Content\themes\mian\assets\images\tooltip\tooltip3.svg" />
+    <Content Include="Content\themes\mian\assets\images\users\1-old.jpg" />
+    <Content Include="Content\themes\mian\assets\images\users\1.jpg" />
+    <Content Include="Content\themes\mian\assets\images\users\1.png" />
+    <Content Include="Content\themes\mian\assets\images\users\2.jpg" />
+    <Content Include="Content\themes\mian\assets\images\users\2.png" />
+    <Content Include="Content\themes\mian\assets\images\users\3.jpg" />
+    <Content Include="Content\themes\mian\assets\images\users\3.png" />
+    <Content Include="Content\themes\mian\assets\images\users\4.jpg" />
+    <Content Include="Content\themes\mian\assets\images\users\5.jpg" />
+    <Content Include="Content\themes\mian\assets\images\users\6.jpg" />
+    <Content Include="Content\themes\mian\assets\images\users\7.jpg" />
+    <Content Include="Content\themes\mian\assets\images\users\8.jpg" />
+    <Content Include="Content\themes\mian\assets\images\users\agent.jpg" />
+    <Content Include="Content\themes\mian\assets\images\users\agent2.jpg" />
+    <Content Include="Content\themes\mian\assets\images\users\d1.jpg" />
+    <Content Include="Content\themes\mian\assets\images\users\d2.jpg" />
+    <Content Include="Content\themes\mian\assets\images\users\d3.jpg" />
+    <Content Include="Content\themes\mian\assets\images\users\d4.jpg" />
+    <Content Include="Content\themes\mian\assets\images\users\d5.jpg" />
+    <Content Include="Content\themes\mian\assets\images\users\profile.png" />
+    <Content Include="Content\themes\mian\assets\libs\block-ui\blockUI.jquery.json" />
+    <Content Include="Content\themes\mian\assets\libs\block-ui\jquery.blockUI.js" />
+    <Content Include="Content\themes\mian\assets\libs\bootstrap-table\bootstrap-test.json" />
+    <Content Include="Content\themes\mian\assets\libs\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Content\themes\mian\assets\libs\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Content\themes\mian\assets\libs\ckeditor\ckeditor.js" />
+    <Content Include="Content\themes\mian\assets\libs\ckeditor\config.js" />
+    <Content Include="Content\themes\mian\assets\libs\ckeditor\contents.css" />
+    <Content Include="Content\themes\mian\assets\libs\ckeditor\styles.js" />
+    <Content Include="Content\themes\mian\assets\libs\daterangepicker\daterangepicker.css" />
+    <Content Include="Content\themes\mian\assets\libs\daterangepicker\daterangepicker.js" />
+    <Content Include="Content\themes\mian\assets\libs\daterangepicker\demo.html" />
+    <Content Include="Content\themes\mian\assets\libs\daterangepicker\drp.png" />
+    <Content Include="Content\themes\mian\assets\libs\daterangepicker\index.html" />
+    <Content Include="Content\themes\mian\assets\libs\daterangepicker\moment.min.js" />
+    <Content Include="Content\themes\mian\assets\libs\daterangepicker\package.js" />
+    <Content Include="Content\themes\mian\assets\libs\daterangepicker\website.css" />
+    <Content Include="Content\themes\mian\assets\libs\daterangepicker\website.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\component.json" />
+    <Content Include="Content\themes\mian\assets\libs\flot\excanvas.min.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\flot.jquery.json" />
+    <Content Include="Content\themes\mian\assets\libs\flot\jquery.colorhelpers.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\jquery.flot.categories.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\jquery.flot.crosshair.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\jquery.flot.errorbars.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\jquery.flot.image.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\jquery.flot.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\jquery.flot.navigate.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\jquery.flot.pie.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\jquery.flot.resize.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\jquery.flot.selection.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\jquery.flot.stack.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\jquery.flot.symbol.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\jquery.flot.threshold.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\jquery.flot.time.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\jquery.js" />
+    <Content Include="Content\themes\mian\assets\libs\flot\LICENSE.txt" />
+    <Content Include="Content\themes\mian\assets\libs\flot\Makefile" />
+    <Content Include="Content\themes\mian\assets\libs\footable\columns.json" />
+    <Content Include="Content\themes\mian\assets\libs\footable\rows.json" />
+    <Content Include="Content\themes\mian\assets\libs\gmaps\gmaps.min.js" />
+    <Content Include="Content\themes\mian\assets\libs\gmaps\jsdoc.json" />
+    <Content Include="Content\themes\mian\assets\libs\gmaps\umd.hbs" />
+    <Content Include="Content\themes\mian\assets\libs\jquery-asColor\LICENSE" />
+    <Content Include="Content\themes\mian\assets\libs\jquery-asColor\package.json" />
+    <Content Include="Content\themes\mian\assets\libs\jquery-asColor\README.md" />
+    <Content Include="Content\themes\mian\assets\libs\jquery-asGradient\LICENSE" />
+    <Content Include="Content\themes\mian\assets\libs\jquery-asGradient\package.json" />
+    <Content Include="Content\themes\mian\assets\libs\jquery-asGradient\README.md" />
+    <Content Include="Content\themes\mian\assets\libs\jquery-sessiontimeout\gruntfile.js" />
+    <Content Include="Content\themes\mian\assets\libs\jquery-sessiontimeout\jquery.sessionTimeout.min.js" />
+    <Content Include="Content\themes\mian\assets\libs\jquery-steps\jquery.steps.css" />
+    <Content Include="Content\themes\mian\assets\libs\jquery-steps\LICENSE.txt" />
+    <Content Include="Content\themes\mian\assets\libs\jquery-steps\nuget\NuGet.exe" />
+    <Content Include="Content\themes\mian\assets\libs\jquery-steps\steps.css" />
+    <Content Include="Content\themes\mian\assets\libs\jquery-steps\steps.jquery.json" />
+    <Content Include="Content\themes\mian\assets\libs\jquery.repeater\complex-repeater.html" />
+    <Content Include="Content\themes\mian\assets\libs\jquery.repeater\gruntfile.js" />
+    <Content Include="Content\themes\mian\assets\libs\jquery.repeater\index.html" />
+    <Content Include="Content\themes\mian\assets\libs\jquery.repeater\index.pre.html" />
+    <Content Include="Content\themes\mian\assets\libs\jquery.repeater\jquery-1.11.1.js" />
+    <Content Include="Content\themes\mian\assets\libs\jquery.repeater\jquery.repeater.min.js" />
+    <Content Include="Content\themes\mian\assets\libs\jquery.repeater\nested-repeater.html" />
+    <Content Include="Content\themes\mian\assets\libs\jquery.repeater\repeater.html" />
+    <Content Include="Content\themes\mian\assets\libs\jquery.repeater\repeater.jquery.json" />
+    <Content Include="Content\themes\mian\assets\libs\jquery.repeater\test-post-parse.php" />
+    <Content Include="Content\themes\mian\assets\libs\jsgrid\db.js" />
+    <Content Include="Content\themes\mian\assets\libs\jsgrid\jsgrid-theme.css" />
+    <Content Include="Content\themes\mian\assets\libs\jsgrid\jsgrid-theme.min.css" />
+    <Content Include="Content\themes\mian\assets\libs\jsgrid\jsgrid.css" />
+    <Content Include="Content\themes\mian\assets\libs\jsgrid\jsgrid.js" />
+    <Content Include="Content\themes\mian\assets\libs\jsgrid\jsgrid.min.css" />
+    <Content Include="Content\themes\mian\assets\libs\jsgrid\jsgrid.min.js" />
+    <Content Include="Content\themes\mian\assets\libs\jvectormap\build.sh" />
+    <Content Include="Content\themes\mian\assets\libs\jvectormap\jquery-jvectormap.css" />
+    <Content Include="Content\themes\mian\assets\libs\jvectormap\jquery-jvectormap.min.js" />
+    <Content Include="Content\themes\mian\assets\libs\jvectormap\LICENSE-AGPL" />
+    <Content Include="Content\themes\mian\assets\libs\jvectormap\LICENSE-COMMERCIAL" />
+    <Content Include="Content\themes\mian\assets\libs\magnific-popup\animation.css" />
+    <Content Include="Content\themes\mian\assets\libs\magnific-popup\meg.init.js" />
+    <Content Include="Content\themes\mian\assets\libs\moment\ender.js" />
+    <Content Include="Content\themes\mian\assets\libs\moment\moment.js" />
+    <Content Include="Content\themes\mian\assets\libs\moment\package.js" />
+    <Content Include="Content\themes\mian\assets\libs\morris.js\bower.travis.json" />
+    <Content Include="Content\themes\mian\assets\libs\morris.js\morris.css" />
+    <Content Include="Content\themes\mian\assets\libs\morris.js\morris.min.js" />
+    <Content Include="Content\themes\mian\assets\libs\natives\index.js" />
+    <Content Include="Content\themes\mian\assets\libs\nestable\index.html" />
+    <Content Include="Content\themes\mian\assets\libs\nestable\jquery.nestable.js" />
+    <Content Include="Content\themes\mian\assets\libs\nouislider\CHANGELOG.MD" />
+    <Content Include="Content\themes\mian\assets\libs\raphael\license.txt" />
+    <Content Include="Content\themes\mian\assets\libs\raphael\raphael.min.js" />
+    <Content Include="Content\themes\mian\assets\libs\raphael\raphael.no-deps.min.js" />
+    <Content Include="Content\themes\mian\assets\libs\raty-js\karma.conf.js" />
+    <Content Include="Content\themes\mian\assets\libs\sweetalert2\sweet-alert.init.js" />
+    <Content Include="Content\themes\mian\assets\libs\tinymce\changelog.txt" />
+    <Content Include="Content\themes\mian\assets\libs\tinymce\jquery.tinymce.min.js" />
+    <Content Include="Content\themes\mian\assets\libs\tinymce\license.txt" />
+    <Content Include="Content\themes\mian\assets\libs\tinymce\tinymce.min.js" />
+    <Content Include="Content\themes\mian\assets\libs\toastr\demo.html" />
+    <Content Include="Content\themes\mian\assets\libs\toastr\karma.conf.js" />
+    <Content Include="Content\themes\mian\assets\libs\toastr\toastr-icon.png" />
+    <Content Include="Content\themes\mian\assets\libs\toastr\toastr.js" />
+    <Content Include="Content\themes\mian\assets\libs\wnumb\test.html" />
+    <Content Include="Content\themes\mian\assets\libs\wnumb\wNumb.js" />
+    <Content Include="Content\themes\mian\dist\css\icons\crypto-icons\cryptocoins.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\flag-icon-css\flag-icon.min.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\css\fa-brands.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\css\fa-brands.min.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\css\fa-regular.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\css\fa-regular.min.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\css\fa-solid.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\css\fa-solid.min.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\css\fontawesome-all.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\css\fontawesome-all.min.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\css\fontawesome.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\css\fontawesome.min.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\less\fa-brands.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\less\fa-regular.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\less\fa-solid.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\less\fontawesome.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\less\_animated.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\less\_bordered-pulled.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\less\_core.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\less\_fixed-width.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\less\_icons.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\less\_larger.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\less\_list.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\less\_mixins.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\less\_rotated-flipped.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\less\_screen-reader.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\less\_stacked.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\less\_variables.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\scss\fa-brands.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\scss\fa-regular.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\scss\fa-solid.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\scss\fontawesome.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\scss\_animated.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\scss\_core.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\scss\_list.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\themes\mian\dist\css\icons\font-awesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="Content\themes\mian\dist\css\icons\material-design-iconic-font\css\material-design-iconic-font.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\material-design-iconic-font\css\material-design-iconic-font.min.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\material-design-iconic-font\css\materialdesignicons.min.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Content\themes\mian\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Content\themes\mian\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Content\themes\mian\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Content\themes\mian\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Content\themes\mian\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="Content\themes\mian\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="Content\themes\mian\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="Content\themes\mian\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="Content\themes\mian\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Content\themes\mian\dist\css\icons\simple-line-icons\css\simple-line-icons.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\themify-icons\fonts\themify.eot" />
+    <Content Include="Content\themes\mian\dist\css\icons\themify-icons\fonts\themify.svg" />
+    <Content Include="Content\themes\mian\dist\css\icons\themify-icons\fonts\themify.ttf" />
+    <Content Include="Content\themes\mian\dist\css\icons\themify-icons\fonts\themify.woff" />
+    <Content Include="Content\themes\mian\dist\css\icons\themify-icons\ie7\ie7.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\themify-icons\ie7\ie7.js" />
+    <Content Include="Content\themes\mian\dist\css\icons\themify-icons\themify-icons.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\themify-icons\themify-icons.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\css\weather-icons-core.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\css\weather-icons-variables.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\css\weather-icons-wind.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\css\weather-icons-wind.min.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\css\weather-icons.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\css\weather-icons.min.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.eot" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.woff" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.woff2" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\css\variables-beaufort.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\css\variables-day.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\css\variables-direction.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\css\variables-misc.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\css\variables-moon.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\css\variables-neutral.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\css\variables-night.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\css\variables-time.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\css\variables-wind-names.css" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-classes\classes-beaufort.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-classes\classes-day.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-classes\classes-direction.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-classes\classes-misc.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-classes\classes-moon-aliases.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-classes\classes-moon.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-classes\classes-neutral.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-classes\classes-night.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-classes\classes-time.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-classes\classes-wind-aliases.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-classes\classes-wind-degrees.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-classes\classes-wind.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-variables\variables-beaufort.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-variables\variables-day.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-variables\variables-direction.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-variables\variables-misc.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-variables\variables-moon.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-variables\variables-neutral.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-variables\variables-night.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-variables\variables-time.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\icon-variables\variables-wind-names.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\mappings\wi-forecast-io.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\mappings\wi-owm.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\mappings\wi-wmo4680.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\mappings\wi-yahoo.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\weather-icons-classes.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\weather-icons-core.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\weather-icons-variables.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\weather-icons-wind.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\weather-icons-wind.min.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\weather-icons.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\less\weather-icons.min.less" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-classes\classes-beaufort.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-classes\classes-day.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-classes\classes-direction.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-classes\classes-misc.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-classes\classes-moon-aliases.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-classes\classes-moon.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-classes\classes-neutral.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-classes\classes-night.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-classes\classes-time.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-classes\classes-wind-aliases.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-classes\classes-wind-degrees.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-classes\classes-wind.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-variables\variables-beaufort.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-variables\variables-day.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-variables\variables-direction.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-variables\variables-misc.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-variables\variables-moon.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-variables\variables-neutral.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-variables\variables-night.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-variables\variables-time.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\icon-variables\variables-wind-names.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\mappings\wi-forecast-io.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\mappings\wi-owm.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\mappings\wi-wmo4680.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\mappings\wi-yahoo.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\weather-icons-classes.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\weather-icons-core.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\weather-icons-variables.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\weather-icons-wind.min.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\weather-icons-wind.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\weather-icons.min.scss" />
+    <Content Include="Content\themes\mian\dist\css\icons\weather-icons\sass\weather-icons.scss" />
+    <Content Include="Content\themes\mian\dist\css\style.css" />
+    <Content Include="Content\themes\mian\dist\css\style.min.css" />
+    <Content Include="Content\themes\mian\dist\css\style2.min.css" />
+    <Content Include="Content\themes\mian\dist\js\app-style-switcher.horizontal.js" />
+    <Content Include="Content\themes\mian\dist\js\app-style-switcher.js" />
+    <Content Include="Content\themes\mian\dist\js\app.init.boxed.js" />
+    <Content Include="Content\themes\mian\dist\js\app.init.dark.js" />
+    <Content Include="Content\themes\mian\dist\js\app.init.horizontal-fullwidth.js" />
+    <Content Include="Content\themes\mian\dist\js\app.init.horizontal.js" />
+    <Content Include="Content\themes\mian\dist\js\app.init.iconbar.js" />
+    <Content Include="Content\themes\mian\dist\js\app.init.js" />
+    <Content Include="Content\themes\mian\dist\js\app.init.light-sidebar.js" />
+    <Content Include="Content\themes\mian\dist\js\app.init.mini-sidebar.js" />
+    <Content Include="Content\themes\mian\dist\js\app.init.overlay.js" />
+    <Content Include="Content\themes\mian\dist\js\app.js" />
+    <Content Include="Content\themes\mian\dist\js\app.min.js" />
+    <Content Include="Content\themes\mian\dist\js\custom.js" />
+    <Content Include="Content\themes\mian\dist\js\custom.min.js" />
+    <Content Include="Content\themes\mian\dist\js\pages\datatable\datatable-basic.init.js" />
+    <Content Include="Content\themes\mian\dist\js\sidebarmenu.js" />
+    <Content Include="Content\themes\mian\dist\js\waves.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\bootstrap.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_alert.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_badge.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_button-group.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_buttons.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_card.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_carousel.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_close.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_code.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_dropdown.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_forms.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_functions.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_grid.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_images.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_input-group.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_list-group.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_media.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_mixins.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_modal.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_nav.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_navbar.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_pagination.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_popover.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_print.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_progress.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_reboot.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_root.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_tables.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_tooltip.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_transitions.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_type.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_utilities.scss" />
+    <Content Include="Content\themes\mian\src\scss\bootstrap\_variables.scss" />
+    <Content Include="Content\themes\mian\src\scss\components.scss" />
+    <Content Include="Content\themes\mian\src\scss\core\animation\animation.scss" />
+    <Content Include="Content\themes\mian\src\scss\core\breadcrumb\breadcrumb.scss" />
+    <Content Include="Content\themes\mian\src\scss\core\buttons\buttons.scss" />
+    <Content Include="Content\themes\mian\src\scss\core\core.scss" />
+    <Content Include="Content\themes\mian\src\scss\core\extra\extra.scss" />
+    <Content Include="Content\themes\mian\src\scss\core\layout\layout.scss" />
+    <Content Include="Content\themes\mian\src\scss\core\loader\spinner.scss" />
+    <Content Include="Content\themes\mian\src\scss\core\scafholdings\scafholding.scss" />
+    <Content Include="Content\themes\mian\src\scss\core\sidebar\sidebar.scss" />
+    <Content Include="Content\themes\mian\src\scss\core\topbar\header.scss" />
+    <Content Include="Content\themes\mian\src\scss\core\topbar\notify.scss" />
+    <Content Include="Content\themes\mian\src\scss\core\wave-effects\wave-effects.scss" />
+    <Content Include="Content\themes\mian\src\scss\custom.scss" />
+    <Content Include="Content\themes\mian\src\scss\mixins\padding-margin.scss" />
+    <Content Include="Content\themes\mian\src\scss\prepros-6.config" />
+    <Content Include="Content\themes\mian\src\scss\responsive.scss" />
+    <Content Include="Content\themes\mian\src\scss\style.scss" />
+    <Content Include="Content\themes\mian\src\scss\theme-colors\theme-colors.scss" />
+    <Content Include="Content\themes\mian\src\scss\variable.scss" />
+    <Content Include="Content\themes\mian\src\scss\widgets\comments.scss" />
+    <Content Include="Content\themes\mian\src\scss\widgets\feeds.scss" />
+    <Content Include="Content\themes\mian\src\scss\widgets\profile.scss" />
+    <Content Include="Content\themes\mian\src\scss\widgets\steamline.scss" />
+    <Content Include="Content\themes\mian\src\scss\widgets\widgets.scss" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\UserDefine\Login_index.js" />
+    <Content Include="Scripts\UserDefine\System_InterestSetting.js" />
+    <Content Include="Scripts\UserDefine\Member_List.js" />
+    <Content Include="Scripts\UserDefine\System_LevelSetting.js" />
+    <Content Include="Scripts\UserDefine\Common.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Employees\List.cshtml" />
+    <Content Include="Views\Employees\Insert.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Detail.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\System\LevelSetting.cshtml" />
+    <Content Include="Views\System\InterestSetting.cshtml" />
+    <Content Include="Views\Modal\#InterestSetting.cshtml" />
+    <Content Include="Views\Modal\#LevelSetting.cshtml" />
+    <Content Include="Views\Member\List.cshtml" />
+    <Content Include="Views\Modal\#Member.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\themes\mian\assets\extra-libs\datatables.net-bs4\css\" />
+    <Folder Include="Content\themes\mian\assets\extra-libs\datatables.net-bs4\js\" />
+    <Folder Include="Content\themes\mian\assets\extra-libs\datatables.net\js\" />
+    <Folder Include="Content\themes\mian\assets\extra-libs\jquery-sessiontimeout\idle\" />
+    <Folder Include="Content\themes\mian\assets\extra-libs\taskboard\css\" />
+    <Folder Include="Content\themes\mian\assets\extra-libs\taskboard\example1\" />
+    <Folder Include="Content\themes\mian\assets\extra-libs\taskboard\js\" />
+    <Folder Include="Content\themes\mian\assets\extra-libs\taskboard\less\" />
+    <Folder Include="Content\themes\mian\assets\extra-libs\toastr\dist\build\" />
+    <Folder Include="Content\themes\mian\assets\extra-libs\toastr\dist\nuget\content\content\" />
+    <Folder Include="Content\themes\mian\assets\extra-libs\toastr\dist\nuget\content\scripts\" />
+    <Folder Include="Content\themes\mian\assets\extra-libs\treeview\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\%40claviska\jquery-minicolors\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-colorpicker\dist\css\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-colorpicker\dist\img\bootstrap-colorpicker\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-colorpicker\dist\js\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-datepaginator\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-datepicker\dist\css\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-datepicker\dist\js\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-datepicker\dist\locales\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-duallistbox\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-material-datetimepicker\css\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-material-datetimepicker\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-material-datetimepicker\js\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-switch\dist\css\bootstrap2\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-switch\dist\css\bootstrap3\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-switch\dist\js\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\accent-neutralise\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\angular\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\auto-refresh\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\click-edit-row\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\cookie\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\copy-rows\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\defer-url\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\editable\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\export\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\filter-control\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\filter\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\flat-json\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\group-by-v2\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\group-by\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\i18n-enhance\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\key-events\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\mobile\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\multi-column-toggle\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\multiple-search\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\multiple-selection-row\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\multiple-sort\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\natural-sorting\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\page-jumpto\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\print\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\reorder-columns\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\reorder-rows\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\resizable\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\select2-filter\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\sticky-header\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\toolbar\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\tree-column\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\extensions\treegrid\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-table\dist\locale\" />
+    <Folder Include="Content\themes\mian\assets\libs\bootstrap-touchspin\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\chart.js\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\chartist-plugin-tooltips\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\chartist\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\adapters\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\assets\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\a11yhelp\dialogs\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\about\dialogs\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\adobeair\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\ajax\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\autocomplete\skins\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\autoembed\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\autogrow\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\autolink\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\balloonpanel\skins\kama\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\balloonpanel\skins\moono-lisa\images\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\balloonpanel\skins\moono\images\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\balloontoolbar\skins\kama\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\balloontoolbar\skins\moono-lisa\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\balloontoolbar\skins\moono\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\bbcode\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\bidi\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\bidi\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\clipboard\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\cloudservices\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\codesnippetgeshi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\codesnippet\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\codesnippet\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\codesnippet\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\codesnippet\lib\highlight\styles\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\colorbutton\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\colorbutton\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\colordialog\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\colordialog\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\copyformatting\cursors\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\copyformatting\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\copyformatting\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\copyformatting\styles\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\devtools\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\dialogadvtab\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\dialog\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\divarea\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\div\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\div\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\div\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\docprops\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\docprops\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\docprops\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\easyimage\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\easyimage\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\easyimage\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\easyimage\styles\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\embedbase\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\embedbase\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\embedsemantic\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\embed\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\emoji\assets\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\emoji\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\emoji\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\emoji\skins\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\find\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\find\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\find\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\flash\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\flash\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\flash\images\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\flash\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\font\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\forms\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\forms\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\forms\images\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\forms\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\iframedialog\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\iframe\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\iframe\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\iframe\images\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\iframe\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\image2\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\image2\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\image2\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\imagebase\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\imagebase\styles\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\image\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\image\images\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\indentblock\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\justify\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\language\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\language\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\link\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\link\images\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\liststyle\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\liststyle\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\magicline\images\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\mathjax\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\mathjax\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\mathjax\images\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\mathjax\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\mentions\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\newpage\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\newpage\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\pagebreak\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\pagebreak\images\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\pagebreak\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\panelbutton\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\pastefromword\filter\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\placeholder\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\placeholder\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\placeholder\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\preview\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\preview\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\print\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\print\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\save\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\save\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\scayt\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\scayt\skins\moono-lisa\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\selectall\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\selectall\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\sharedspace\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\showblocks\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\showblocks\images\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\showblocks\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\smiley\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\smiley\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\smiley\images\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\smiley\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\sourcedialog\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\sourcedialog\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\sourcedialog\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\specialchar\dialogs\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\stylesheetparser\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\tableresize\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\tableselection\styles\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\tabletools\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\table\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\templates\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\templates\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\templates\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\templates\templates\images\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\textmatch\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\textwatcher\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\uicolor\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\uicolor\icons\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\uicolor\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\uploadfile\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\widget\images\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\wsc\dialogs\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\wsc\skins\moono-lisa\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\plugins\xml\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\css\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\img\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\js\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\assets\inlineall\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\assets\outputxhtml\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\assets\uilanguages\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\autocomplete\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\autogrow\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\bbcode\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\codesnippet\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\devtools\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\dialog\assets\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\divarea\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\docprops\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\easyimage\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\emoji\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\enterkey\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\htmlwriter\assets\outputforflash\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\image2\assets\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\magicline\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\mathjax\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\mentions\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\placeholder\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\sharedspace\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\sourcedialog\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\stylesheetparser\assets\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\tableresize\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\toolbar\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\uicolor\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\old\wysiwygarea\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\toolbarconfigurator\css\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\toolbarconfigurator\font\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\toolbarconfigurator\js\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\samples\toolbarconfigurator\lib\codemirror\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\skins\kama\images\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\skins\moono-lisa\images\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\ckeditor\skins\moono\images\hidpi\" />
+    <Folder Include="Content\themes\mian\assets\libs\clockpicker\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\cropper\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\datatables.net-bs4\css\" />
+    <Folder Include="Content\themes\mian\assets\libs\datatables.net-bs4\js\" />
+    <Folder Include="Content\themes\mian\assets\libs\daterangepicker\website\" />
+    <Folder Include="Content\themes\mian\assets\libs\dragula\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\dropzone\dist\min\" />
+    <Folder Include="Content\themes\mian\assets\libs\echarts\dist\extension\" />
+    <Folder Include="Content\themes\mian\assets\libs\footable\css\" />
+    <Folder Include="Content\themes\mian\assets\libs\footable\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\footable\js\" />
+    <Folder Include="Content\themes\mian\assets\libs\fullcalendar\dist\locale\" />
+    <Folder Include="Content\themes\mian\assets\libs\gaugeJS\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\gmaps\lib\" />
+    <Folder Include="Content\themes\mian\assets\libs\inputmask\dist\inputmask\bindings\" />
+    <Folder Include="Content\themes\mian\assets\libs\inputmask\dist\inputmask\dependencyLibs\" />
+    <Folder Include="Content\themes\mian\assets\libs\inputmask\dist\inputmask\global\" />
+    <Folder Include="Content\themes\mian\assets\libs\inputmask\dist\inputmask\phone-codes\" />
+    <Folder Include="Content\themes\mian\assets\libs\inputmask\dist\min\inputmask\bindings\" />
+    <Folder Include="Content\themes\mian\assets\libs\inputmask\dist\min\inputmask\dependencyLibs\" />
+    <Folder Include="Content\themes\mian\assets\libs\inputmask\dist\min\inputmask\global\" />
+    <Folder Include="Content\themes\mian\assets\libs\inputmask\dist\min\inputmask\phone-codes\" />
+    <Folder Include="Content\themes\mian\assets\libs\jquery-asColorPicker\dist\css\" />
+    <Folder Include="Content\themes\mian\assets\libs\jquery-asColorPicker\dist\images\" />
+    <Folder Include="Content\themes\mian\assets\libs\jquery-asColor\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\jquery-asColor\src\" />
+    <Folder Include="Content\themes\mian\assets\libs\jquery-asGradient\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\jquery-asGradient\src\" />
+    <Folder Include="Content\themes\mian\assets\libs\jquery-steps\build\" />
+    <Folder Include="Content\themes\mian\assets\libs\jquery-steps\lib\" />
+    <Folder Include="Content\themes\mian\assets\libs\jquery-validation\dist\localization\" />
+    <Folder Include="Content\themes\mian\assets\libs\jquery.flot.tooltip\js\" />
+    <Folder Include="Content\themes\mian\assets\libs\jquery\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\jsgrid\dist\i18n\" />
+    <Folder Include="Content\themes\mian\assets\libs\jsgrid\i18n\" />
+    <Folder Include="Content\themes\mian\assets\libs\jvectormap\converter\" />
+    <Folder Include="Content\themes\mian\assets\libs\jvectormap\lib\" />
+    <Folder Include="Content\themes\mian\assets\libs\magnific-popup\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\masonry-layout\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\moment\locale\" />
+    <Folder Include="Content\themes\mian\assets\libs\moment\min\" />
+    <Folder Include="Content\themes\mian\assets\libs\nouislider\distribute\" />
+    <Folder Include="Content\themes\mian\assets\libs\perfect-scrollbar\dist\css\" />
+    <Folder Include="Content\themes\mian\assets\libs\perfect-scrollbar\dist\js\" />
+    <Folder Include="Content\themes\mian\assets\libs\pickadate\lib\compressed\themes\" />
+    <Folder Include="Content\themes\mian\assets\libs\pickadate\lib\compressed\translations\" />
+    <Folder Include="Content\themes\mian\assets\libs\pickadate\lib\themes\" />
+    <Folder Include="Content\themes\mian\assets\libs\pickadate\lib\translations\" />
+    <Folder Include="Content\themes\mian\assets\libs\popper.js\dist\esm\" />
+    <Folder Include="Content\themes\mian\assets\libs\popper.js\dist\umd\" />
+    <Folder Include="Content\themes\mian\assets\libs\quill\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\raphael\dev\" />
+    <Folder Include="Content\themes\mian\assets\libs\raty-js\lib\fonts\" />
+    <Folder Include="Content\themes\mian\assets\libs\raty-js\lib\images\" />
+    <Folder Include="Content\themes\mian\assets\libs\raty-js\vendor\" />
+    <Folder Include="Content\themes\mian\assets\libs\select2\dist\css\" />
+    <Folder Include="Content\themes\mian\assets\libs\select2\dist\js\i18n\" />
+    <Folder Include="Content\themes\mian\assets\libs\summernote\dist\font\" />
+    <Folder Include="Content\themes\mian\assets\libs\summernote\dist\lang\" />
+    <Folder Include="Content\themes\mian\assets\libs\sweetalert2\dist\" />
+    <Folder Include="Content\themes\mian\assets\libs\tablesaw\dist\dependencies\" />
+    <Folder Include="Content\themes\mian\assets\libs\tablesaw\dist\stackonly\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\advlist\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\anchor\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\autolink\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\autoresize\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\autosave\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\bbcode\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\charmap\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\codesample\css\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\code\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\colorpicker\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\contextmenu\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\directionality\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\emoticons\img\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\fullpage\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\fullscreen\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\help\img\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\hr\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\imagetools\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\image\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\importcss\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\insertdatetime\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\legacyoutput\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\link\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\lists\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\media\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\nonbreaking\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\noneditable\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\pagebreak\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\paste\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\preview\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\print\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\save\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\searchreplace\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\spellchecker\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\tabfocus\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\table\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\template\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\textcolor\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\textpattern\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\toc\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\visualblocks\css\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\visualchars\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\plugins\wordcount\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\skins\lightgray\fonts\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\skins\lightgray\img\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\themes\inlite\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\themes\mobile\" />
+    <Folder Include="Content\themes\mian\assets\libs\tinymce\themes\modern\" />
+    <Folder Include="Content\themes\mian\assets\libs\toastr\build\" />
+    <Folder Include="Content\themes\mian\assets\libs\toastr\nuget\content\content\" />
+    <Folder Include="Content\themes\mian\assets\libs\toastr\nuget\content\scripts\" />
+    <Folder Include="Content\themes\mian\assets\libs\typeahead.js\dist\" />
+    <Folder Include="Content\themes\mian\dist\css\icons\flag-icon-css\flags\" />
+    <Folder Include="Content\themes\mian\dist\css\icons\simple-line-icons\fonts\" />
+    <Folder Include="Content\themes\mian\dist\css\icons\simple-line-icons\less\" />
+    <Folder Include="Content\themes\mian\dist\css\icons\simple-line-icons\scss\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\c3-chart\axis\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\c3-chart\bar-pie\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\c3-chart\data\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\c3-chart\line\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\calendar\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\chartist\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\chartjs\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\chat\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\dashboards\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\echarts\bar\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\echarts\line\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\echarts\pie-doughnut\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\email\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\forms\clockpicker\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\forms\datetimepicker\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\forms\dual-listbox\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\forms\img-cropper\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\forms\mask\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\forms\select2\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\forms\typeahead\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\maps\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\morris\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\samplepages\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\sparkline\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\tables\" />
+    <Folder Include="Content\themes\mian\dist\js\pages\widget\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:42976/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

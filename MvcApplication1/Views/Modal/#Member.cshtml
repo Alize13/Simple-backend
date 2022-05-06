@@ -1,0 +1,27 @@
+﻿@using MvcApplication1.Models;
+
+@model DB_Member
+
+<div class="card">
+    <h3></h3>
+    @Html.HiddenFor(m => m.MemberID)
+    <div>
+        @Html.LabelFor(m => m.MemberAccount, new { @class = "col-lg-5" })
+        @Html.TextBoxFor(m => m.MemberAccount, new { disabled = "disabled", @class = "col-lg-6" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.MemberPassword, new { @class = "col-lg-5" })
+        @Html.TextBoxFor(m => m.MemberPassword, new
+        {
+            name = "MemberPassword",
+            id = "MemberPassword",
+            @class = "col-lg-6",
+            @onkeypress = "SpecialKeyPress()",
+            @onchange = "ChangeSpecial($(this))",
+            maxlength = 50
+        })
+    </div>
+</div>
+
+
+

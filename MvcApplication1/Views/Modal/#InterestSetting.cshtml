@@ -1,0 +1,23 @@
+﻿@using MvcApplication1.Models;
+@model DB_Interest
+
+
+<div class="card">
+    <h3></h3>
+    @Html.HiddenFor(m => m.InterestID)
+    <div>
+        @Html.LabelFor(m => m.Interest, new { @class = "col-lg-5" })
+        @Html.TextBoxFor(m => m.Interest, new
+        {
+            name = "Interest",
+            id = "Interest",
+            @class = "col-lg-6",
+            @onkeypress = "SpecialKeyPress()",
+            @onchange = "ChangeSpecial($(this))",
+            maxlength = 50
+        })
+    </div>
+</div>
+
+
+

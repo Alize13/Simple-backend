@@ -1,0 +1,63 @@
+﻿@model MvcApplication1.Models.Employees
+
+<div class="row  col-12 card">
+    <div class="card-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend>Employees</legend>
+
+                @Html.HiddenFor(model => model.ID)
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Number)
+                </div>
+                <div class="editor-field">
+                    @Html.DisplayFor(model => model.Number)
+                    @Html.HiddenFor(model => model.Number)
+                </div>
+
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Age)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Age)
+                    @Html.ValidationMessageFor(model => model.Age)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Address)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Address)
+                    @Html.ValidationMessageFor(model => model.Address)
+                </div>
+
+                <br>
+                <p>
+                    <input class="btn btn-outline-danger" type="submit" value="更新" />
+                </p>
+            </fieldset>
+        }
+
+        <div>
+            @Html.ActionLink("返回清單", "List", null, new { @class = "btn btn btn-outline-secondary" })
+        </div>
+
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
